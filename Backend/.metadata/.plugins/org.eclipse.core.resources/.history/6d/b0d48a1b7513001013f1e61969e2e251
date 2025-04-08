@@ -1,0 +1,25 @@
+package com.empmanagement;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EmpService {
+	
+		List<Employee> employees=new ArrayList<>();
+		
+		public List<Employee> getAllEmployees(){
+			return employees;
+			
+		}
+		
+		public String createEmployee(Employee emp) {
+			 employees.add(emp);
+			 return "saved successfully";
+			
+		}
+		
+		public boolean deleteEmployee(int id) {
+			employees.remove(id);
+			return true;
+		}
+}

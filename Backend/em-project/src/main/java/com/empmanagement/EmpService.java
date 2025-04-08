@@ -1,0 +1,51 @@
+package com.empmanagement;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class EmpService {
+
+	
+		@Autowired
+		private EmployeeRepository empRepo;
+
+	
+		
+		public List<Employee> getAllEmployees(){
+			return empRepo.findAll();
+			
+		}
+		
+		public Employee getEmployeeById(int id) {
+			Employee existingEmp=empRepo.findById(id).get();
+			
+			return existingEmp;
+		}
+		
+		public String createEmployee(Employee emp) {
+			 empRepo.save(emp);
+			 return "saved successfully";
+			
+		}
+		
+		public boolean deleteEmployee(int id) {
+			Employee existingEmp= empRepo.findById(id).get();
+			
+			empRepo.delete(existingEmp);
+			return true;
+		}
+		
+		public String updateEmployee(int id,Employee emp) {
+		Employee existingEmp=empRepo.findById(id).get();
+		existingEmp.setName(emp.getName());
+		existingEmp.setPhone(emp.getPhone());
+		existingEmp.setEmail(emp.getEmail());
+			
+			empRepo.save(existingEmp);
+			return "updated successfully";
+		}
+}

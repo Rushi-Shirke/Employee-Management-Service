@@ -1,0 +1,29 @@
+package com.empmanagement;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class EmpService {
+	
+		@Autowired
+		private EmployeeRepository empRepo;
+	
+		
+		public List<Employee> getAllEmployees(){
+			return empRepo.findAll();
+			
+		}
+		
+		public String createEmployee(Employee emp) {
+			 empRepo.save(emp);
+			 return "saved successfully";
+			
+		}
+		
+		public boolean deleteEmployee(int id) {
+			empRepo.deleteById(id);
+			return true;
+		}
+}
