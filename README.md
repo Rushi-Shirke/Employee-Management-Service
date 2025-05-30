@@ -1,5 +1,6 @@
 # 👨‍💼 Employee Management Service
-A full-stack CRUD application built using Spring Boot (backend) and React.js with Vite (frontend) with API testing via Postman.
+A full-stack Employee Management CRUD application developed using **Spring Boot** for the backend, **React.js with Vite** for the frontend, and **MySQL** as the database. All API endpoints are tested using **Postman**.
+
 
 This project is a basic Employee Management Service that allows users to add, view, update, and delete employee records.  
 The backend is built using Spring Boot, while the frontend is developed using React. API functionalities are tested through Postman.
